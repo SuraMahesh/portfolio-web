@@ -5,6 +5,7 @@ import sass from '../assets/sass.png'
 import bgIMG from '../assets/bgIMG.png'
 import bgWhite from '../assets/bgWhite.png'
 import circle from '../assets/circle.svg'
+import marketplace from '../assets/marketplace.jpeg'
 
 export default {
     profile,
@@ -13,5 +14,6 @@ export default {
     sass,
     bgIMG,
     bgWhite,
-    circle
+    circle, 
+    marketplace
 }
