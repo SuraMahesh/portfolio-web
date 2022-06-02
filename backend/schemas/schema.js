@@ -4,7 +4,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import profile from './profile'
-import about from './about'
+import abouts from './abouts'
 import skills from './skills'
 import workExperience from './workExperience'
 import experiences from './experiences'
@@ -26,6 +26,6 @@ export default createSchema({
     contact,
     experiences,
     skills,
-    about
+    abouts
   ]),
 })
