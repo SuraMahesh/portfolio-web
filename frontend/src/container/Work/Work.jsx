@@ -2,13 +2,25 @@ import React, { useState, useEffect } from 'react'
 import './Work.scss';
 import { motion } from 'framer-motion';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{y:100, opacity: 0}]);
+
+    setTimeout(() => {
+      setAnimateCard([{y:0, opacity: 1}]);
+
+      if(item === 'All') {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)))
+      }
+    }, 500)
 
   }
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
@@ -26,7 +38,7 @@ const Work = () => {
   return (
     <>
     <div className='app__work-filter'>
-      {['Mobile Application', 'Web Application', 'NFT Marketplace', 'NFT Collection', 'All'].map((item, index) => {
+      {['Mobile Application', 'Web Application', 'NFT Marketplace', 'NFT Collection', 'All'].map((item, index) => (
         <div
         key = {index}
         onClick={() => handleWorkFilter(item)}
@@ -35,7 +47,7 @@ const Work = () => {
 
         {item}
         </div>
-      })}
+      ))}
     </div>
     <motion.div
     animate={animateCard}
@@ -50,6 +62,7 @@ const Work = () => {
             whileHover={{opacity: [0,1]}}
             transition={{duration: 0.25, ease: 'easeInOut'}}
             className='app__work-hover app__flex'
+
             >
               <a href={work.projectLink} target='_blank' rel='noreferrer'>
                 <motion.dev
@@ -58,7 +71,7 @@ const Work = () => {
                 transition={{ duration: 0.25}}
                 className="app__flex"
                 >
-                  <AiFillEye />
+                  <AiFillEye style={{ color: 'white', marginLeft: '5px', marginRight: '5px', width: '30px', height: '30px'}}/>
 
                 </motion.dev>
               </a>
@@ -70,7 +83,7 @@ const Work = () => {
                 transition={{ duration: 0.25}}
                 className="app__flex"
                 >
-                  <AiFillGithub/>
+                  <AiFillGithub style={{ color: 'white', marginLeft: '5px', marginRight: '5px', width: '30px', height: '30px'}}/>
 
                 </motion.dev>
               </a>
@@ -103,4 +116,8 @@ const Work = () => {
   )
 }
 
-export default Work
+export default AppWrap(
+  MotionWrap(Work, 'app__works'),
+  'work',
+  'app__primarybg'
+  );
