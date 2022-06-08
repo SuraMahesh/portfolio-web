@@ -37,6 +37,7 @@ const Work = () => {
   }, [])
   return (
     <>
+    <h2 className="head-text">What We Do</h2>
     <div className='app__work-filter'>
       {['Mobile Application', 'Web Application', 'NFT Marketplace', 'NFT Collection', 'All'].map((item, index) => (
         <div

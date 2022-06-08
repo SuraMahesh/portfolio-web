@@ -93,6 +93,10 @@ const Footer = () => {
           <h3 className="head-text">Thank You!</h3>
         </div>
       )}
+       <div className='copyright'>
+          <p className='p-text'>@2022 SURANGA</p>
+          <p className='p-text'>All rights reserved</p>
+        </div>
     </>
   );
 };

@@ -8,6 +8,10 @@ import circle from '../assets/circle.svg'
 import marketplace from '../assets/marketplace.jpeg'
 import email from '../assets/email.png'
 import mobile from '../assets/mobile.png'
+import react from '../assets/react.png'
+import sanity from '../assets/sanity.png'
+import python from '../assets/python.png'
+
 
 export default { 
     profile,
@@ -19,5 +23,8 @@ export default {
     circle, 
     marketplace,
     email,
-    mobile
+    mobile,
+    react,
+    sanity,
+    python
 }
