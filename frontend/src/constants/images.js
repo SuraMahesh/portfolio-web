@@ -6,8 +6,10 @@ import bgIMG from '../assets/bgIMG.png'
 import bgWhite from '../assets/bgWhite.png'
 import circle from '../assets/circle.svg'
 import marketplace from '../assets/marketplace.jpeg'
+import email from '../assets/email.png'
+import mobile from '../assets/mobile.png'
 
-export default {
+export default { 
     profile,
     flutter,
     redux,
@@ -15,5 +17,7 @@ export default {
     bgIMG,
     bgWhite,
     circle, 
-    marketplace
+    marketplace,
+    email,
+    mobile
 }
